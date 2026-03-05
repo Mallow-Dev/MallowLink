@@ -1,0 +1,43 @@
+*.iml
+.gradle
+/local.properties
+/.idea
+.DS_Store
+/build
+/captures
+.externalNativeBuild
+.cxx
+local.properties
+
+# Android
+*.apk
+*.aab
+*.ap_
+*.dex
+bin/
+gen/
+out/
+release/
+
+# Gradle
+.gradle/
+build/
+!gradle-wrapper.jar
+
+# Model files (too large for git; use download_models.sh)
+app/src/main/assets/models/*.onnx
+app/src/main/assets/models/*.bin
+app/src/main/assets/models/*.tflite
+# Keep vocab files in git (small text files)
+!app/src/main/assets/models/vocab.txt
+!app/src/main/assets/models/llm_vocab.txt
+!app/src/main/assets/models/README.md
+
+# Room schema exports (generated)
+app/schemas/
+
+# ProGuard
+app/out/
+
+# Kotlin
+.kotlin/

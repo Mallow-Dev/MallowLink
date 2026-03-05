@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="ic_launcher_background">#120E1C</color>
+    <color name="mallow_purple">#7B5EA7</color>
+    <color name="mallow_purple_light">#B08DD4</color>
+    <color name="mallow_pink">#E8A0BF</color>
+    <color name="mallow_teal">#8ACFCC</color>
+    <color name="mallow_surface">#1A1625</color>
+    <color name="mallow_on_surface">#EDE8F5</color>
+</resources>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">MallowLink</string>
+    <string name="tile_label">Ask MallowLink</string>
+    <string name="notification_indexing_title">Indexing Documents</string>
+    <string name="notification_indexing_text">Building your personal knowledge base…</string>
+    <string name="notification_bubble_title">MallowLink</string>
+    <string name="notification_bubble_text">Tap to ask a quick question</string>
+
+    <!-- Onboarding -->
+    <string name="onboarding_welcome_title">Meet MallowLink</string>
+    <string name="onboarding_welcome_subtitle">Your private AI assistant for local files</string>
+    <string name="onboarding_privacy_title">100% Private</string>
+    <string name="onboarding_privacy_subtitle">All AI runs on-device. No cloud. No uploads.</string>
+
+    <!-- Chat -->
+    <string name="chat_placeholder">Ask anything… try @pdf or @notes</string>
+    <string name="chat_empty_title">Ask MallowLink</string>
+    <string name="chat_empty_subtitle">Search your personal files with AI.\nEverything stays on your device.</string>
+
+    <!-- Sources -->
+    <string name="sources_empty_title">No sources yet</string>
+    <string name="sources_empty_subtitle">Tap "Add Folder" to start indexing your local files</string>
+    <string name="sources_add_folder">Add Folder</string>
+    <string name="sources_reindex">Re-index</string>
+    <string name="sources_remove">Remove source</string>
+    <string name="sources_confirm_remove_title">Remove Source?</string>
+
+    <!-- Settings -->
+    <string name="settings_model_section">On-Device Model</string>
+    <string name="settings_indexing_section">Indexing &amp; Sync</string>
+    <string name="settings_privacy_section">Privacy</string>
+    <string name="settings_clear_data">Clear all indexed data</string>
+
+    <!-- Content descriptions -->
+    <string name="cd_send_message">Send message</string>
+    <string name="cd_back">Back</string>
+    <string name="cd_filter">Filter sources</string>
+    <string name="cd_more_options">More options</string>
+    <string name="cd_citation">Open source document</string>
+</resources>

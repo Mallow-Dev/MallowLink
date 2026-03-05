@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<full-backup-content>
+    <!-- Exclude the Room database – contains embeddings and chat history -->
+    <exclude domain="database" path="." />
+    <!-- Exclude all SharedPrefs that might cache sensitive paths -->
+    <exclude domain="sharedpref" path="." />
+    <!-- Exclude model files (large and device-specific) -->
+    <exclude domain="file" path="models/" />
+</full-backup-content>

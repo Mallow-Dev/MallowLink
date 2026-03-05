@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Base application theme – Compose handles the full theming via MallowLinkTheme.
+         We only need a minimal Activity theme here to remove the default window background flash. -->
+    <style name="Theme.MallowLink" parent="android:Theme.Material.Light.NoActionBar">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:windowLightStatusBar">false</item>
+    </style>
+
+    <!-- Splash screen theme -->
+    <style name="Theme.MallowLink.Splash" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">#120E1C</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/ic_mallow_tile</item>
+        <item name="postSplashScreenTheme">@style/Theme.MallowLink</item>
+    </style>
+</resources>
