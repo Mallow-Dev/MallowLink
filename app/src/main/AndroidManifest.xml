@@ -28,8 +28,21 @@
     <!-- Vibration for haptic feedback -->
     <uses-permission android:name="android.permission.VIBRATE" />
 
-    <!-- Wake lock during indexing -->
+    <!-- Wake lock during indexing and recording -->
     <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <!-- ── Call & Meeting Summary feature ────────────────────────────────── -->
+    <!-- Microphone for audio capture -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <!-- Phone state for auto-detecting call start/end -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <!-- Caller ID for display title (optional; degrades gracefully if denied) -->
+    <uses-permission android:name="android.permission.READ_CALL_LOG"
+        android:maxSdkVersion="32" />
+    <!-- Calendar read for smart linking suggestions -->
+    <uses-permission android:name="android.permission.READ_CALENDAR" />
+    <!-- Foreground service with microphone type (Android 14+) -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MICROPHONE" />
 
     <application
         android:name=".MallowLinkApp"
@@ -111,6 +124,40 @@
                 <action android:name="android.intent.action.LOCKED_BOOT_COMPLETED" />
             </intent-filter>
         </receiver>
+
+        <!-- ───────────────────────── AUDIO CAPTURE SERVICE ───────────────── -->
+        <!--
+            foregroundServiceType="microphone" is required on Android 14+ to capture
+            audio in the foreground. On Android 10–13 the standard FOREGROUND_SERVICE
+            permission is sufficient.
+        -->
+        <service
+            android:name=".calls.capture.AudioCaptureService"
+            android:exported="false"
+            android:foregroundServiceType="microphone|dataSync" />
+
+        <!-- ───────────────────────── CALL STATE RECEIVER ───────────────── -->
+        <!--
+            Listens for PHONE_STATE_CHANGED to detect when a call connects.
+            Does NOT auto-record; only posts a consent notification.
+        -->
+        <receiver
+            android:name=".calls.capture.CallStateReceiver"
+            android:exported="true"
+            android:permission="android.permission.READ_PHONE_STATE">
+            <intent-filter>
+                <action android:name="android.intent.action.PHONE_STATE" />
+            </intent-filter>
+        </receiver>
+
+        <!-- ───────────────────────── CONSENT ACTION RECEIVER ───────────── -->
+        <!--
+            Handles "Record" / "Skip" button taps from the consent notification.
+            Not exported; only reachable via PendingIntent from within the app.
+        -->
+        <receiver
+            android:name=".calls.capture.ConsentActionReceiver"
+            android:exported="false" />
 
         <!-- ───────────────────────── FILE PROVIDER ───────────────────────── -->
         <provider

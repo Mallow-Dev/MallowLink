@@ -35,5 +35,30 @@ assets/
     llm_vocab.txt          ← LLM vocabulary (one token per line)
 ```
 
+### 3. ASR model (`whisper_encoder.onnx` + `whisper_decoder.onnx` + `whisper_vocab.json`)
+- **Model**: `openai/whisper-tiny` (39 MB INT8) — best for on-device phone call ASR
+- Export to ONNX:
+  ```bash
+  pip install optimum[onnxruntime]
+  optimum-cli export onnx --model openai/whisper-tiny --task automatic-speech-recognition ./onnx_whisper/
+  ```
+- Quantise encoder + decoder:
+  ```bash
+  python -m onnxruntime.quantization.quantize_dynamic \
+    onnx_whisper/encoder_model.onnx whisper_encoder.onnx --weight_type QInt8
+  python -m onnxruntime.quantization.quantize_dynamic \
+    onnx_whisper/decoder_model.onnx whisper_decoder.onnx --weight_type QInt8
+  ```
+- Copy `vocab.json` from `onnx_whisper/` → `whisper_vocab.json`
+- Total size: ~39 MB quantised (encoder + decoder)
+
+```
+assets/
+  models/
+    whisper_encoder.onnx   ← Whisper-tiny encoder
+    whisper_decoder.onnx   ← Whisper-tiny decoder
+    whisper_vocab.json     ← Whisper multilingual vocabulary
+```
+
 ## Build-time download script
 Run `./scripts/download_models.sh` to fetch and place pre-quantised models.

@@ -32,6 +32,29 @@
     <string name="settings_privacy_section">Privacy</string>
     <string name="settings_clear_data">Clear all indexed data</string>
 
+    <!-- Call &amp; Meeting Summary -->
+    <string name="calls_feature_name">Call &amp; Meeting Summary</string>
+    <string name="calls_consent_title_call">Record this call?</string>
+    <string name="calls_consent_title_meeting">Record this meeting?</string>
+    <string name="calls_consent_privacy_note">100% on-device. Audio and transcripts never leave your phone.</string>
+    <string name="calls_consent_accept_call">Record Call</string>
+    <string name="calls_consent_accept_meeting">Record Meeting</string>
+    <string name="calls_consent_decline">Don\'t Record</string>
+    <string name="calls_consent_all_party_label">I have informed all participants that this call may be recorded</string>
+    <string name="calls_notif_title">🔴 Recording active</string>
+    <string name="calls_notif_stop">STOP</string>
+    <string name="calls_consent_notif_title">Record this call?</string>
+    <string name="calls_consent_notif_text">Tap to summarise with MallowLink (on-device only)</string>
+    <string name="calls_summary_overview_section">Overview</string>
+    <string name="calls_summary_actions_section">Action Items</string>
+    <string name="calls_summary_decisions_section">Key Decisions</string>
+    <string name="calls_summary_related_section">Related</string>
+    <string name="calls_summary_transcript_section">Transcript</string>
+    <string name="calls_privacy_guarantee_1">Audio and transcripts stored encrypted with AES-256-GCM</string>
+    <string name="calls_privacy_guarantee_2">Encryption keys in Android Keystore (hardware-backed)</string>
+    <string name="calls_privacy_guarantee_3">No audio, text, or summary ever sent off-device</string>
+    <string name="calls_privacy_guarantee_4">Deleting a session destroys the key, making data unrecoverable</string>
+
     <!-- Content descriptions -->
     <string name="cd_send_message">Send message</string>
     <string name="cd_back">Back</string>
